@@ -182,3 +182,8 @@ button:active{
     }
 
 }
+.voltar{
+        position:static;
+        display:inline-block;
+        margin-bottom:20px;
+    }
