@@ -1,4 +1,4 @@
-const inicio = new Date("2026-06-29T00:00:00");
+const inicio = new Date("2026-06-28T18:35:43");
 
 function atualizar(){
 
