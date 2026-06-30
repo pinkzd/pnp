@@ -22,7 +22,7 @@ const flores = [
     {
         emoji:"🌹",
         titulo:"O primeiro 'Eu te amo' de muitos",
-        data:"29/06/2026",
+        data:"28/06/2026",
         texto:"Aqui eu já tinha certeza que te queria pra vida inteira.",
         x:60,
         y:32

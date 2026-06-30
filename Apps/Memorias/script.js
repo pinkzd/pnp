@@ -24,7 +24,13 @@ const memorias = [
         texto:"Pedi foto da sua maquiagem e recebi essa perfeição.",
         extra:"Esse olhar ainda vai virar tatuagem."
     },
-    
+    {
+        titulo:"Nossa primeira foto juntos",
+        data:"29/06/2026",
+        foto:"fotos/pr.jpeg",
+        texto:"Grande confusão, mas a foto mais gangstar do mundo.",
+        extra:"Amo o detalhe de você segurando meus braços."
+    },
 ];
 
 function criarMemorias(){
