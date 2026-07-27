@@ -104,9 +104,9 @@ const memorias = [
      {
         titulo:"Casadinhos",
         data:"18/07/2026",
-        foto:"fotos/casalzão.jpeg",
-        texto:"Eu amo tanto essa foto, estamos tão lindos nela",
-        extra:"❤️ Primeira foto nossa que postamos juntos"
+        foto:"fotos/casados.jpg",
+        texto:"Nosso dia de marido e mulher",
+        extra:"Um dia, tivemos um spoiler da nossa vida inteira"
     },
 ];
 
