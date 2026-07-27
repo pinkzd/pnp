@@ -30,6 +30,48 @@ const musicas = [
         artista:"Matanza",
         texto:"As vezes nossos vinte melhores amigos realmente estão em um maço de cigarro.",
         link:"https://open.spotify.com/track/1LLtAcI6SvRUnDeWJY2RhN"
+    },
+    {
+        emoji:"🦑",
+        titulo:"Deixa",
+        artista:"Lagum",
+        texto:"Porque eu só quero cuidar de você e deixar para amanhã o que tenho para fazer.",
+        link:"https://open.spotify.com/track/1LLtAcI6SvRUnDeWJY2RhN"
+    },
+    {
+        emoji:"🪽",
+        titulo:"Heaven Can Wait",
+        artista:"Michael Jackson",
+        texto:"Não quero ir sem ver o seu rosto novamente.",
+        link:"https://open.spotify.com/track/1LLtAcI6SvRUnDeWJY2RhN"
+    },
+    {
+        emoji:"🫀",
+        titulo:"Pra Sonhar",
+        artista:"Marcelo Jeneci",
+        texto:"Sempre que você passa eu fico paralizado.",
+        link:"https://open.spotify.com/track/1LLtAcI6SvRUnDeWJY2RhN"
+    },
+    {
+        emoji:"🧠",
+        titulo:"Pensando em Mim",
+        artista:"Matchola, 2ZDinizz",
+        texto:"Gosto quando me chama de seu Homem.",
+        link:"https://open.spotify.com/track/1LLtAcI6SvRUnDeWJY2RhN"
+    },
+    {
+        emoji:"🚩",
+        titulo:"Bandido não, Malandro!",
+        artista:"2ZDinizz",
+        texto:"Não vem dizer que não pensa, não passa na sua cabeça, nós dois fazer besteiras, Amor a noite inteira.",
+        link:"https://open.spotify.com/track/1LLtAcI6SvRUnDeWJY2RhN"
+    },
+    {
+        emoji:"👏👏",
+        titulo:"Deusa",
+        artista:"BK, 2ZDinizz",
+        texto:"O que você fez de joelhos  no chão...",
+        link:"https://open.spotify.com/track/1LLtAcI6SvRUnDeWJY2RhN"
     }
 ];
 

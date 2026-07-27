@@ -27,6 +27,14 @@ const flores = [
         x:60,
         y:32
     },
+    {
+        emoji:"🌼",
+        titulo:"Nossa primeira noite juntos",
+        data:"18/07/2026",
+        texto:"Essa noite foi perfeita em tudo que eu poderia imaginar.",
+        x:54,
+        y:23
+    },
 
 ];
 
