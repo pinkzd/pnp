@@ -33,7 +33,7 @@ const flores = [
         data:"18/07/2026",
         texto:"Essa noite foi perfeita em tudo que eu poderia imaginar.",
         x:60,
-        y:23
+        y:12,
     },
     {
         emoji:"💐",
