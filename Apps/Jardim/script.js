@@ -32,6 +32,14 @@ const flores = [
         titulo:"Nossa primeira noite juntos",
         data:"18/07/2026",
         texto:"Essa noite foi perfeita em tudo que eu poderia imaginar.",
+        x:60,
+        y:23
+    },
+    {
+        emoji:"💐",
+        titulo:"Pedido de namoro",
+        data:"08/08/2026",
+        texto:"Mesmo sentindo que já somos cadados, lhe pedi em namoro, a melhor coisa que já fiz.",
         x:54,
         y:23
     },
