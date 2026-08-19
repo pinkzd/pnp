@@ -942,3 +942,28 @@ body{
         font-size:15px;
     }
 }
+.foto-memoria{
+    width:100%;
+    max-width:150px;
+    margin:30px auto;
+    overflow:hidden;
+
+    border-radius:6px;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.18);
+
+    transform:rotate(-1deg);
+
+    background:white;
+    padding:10px 10px 35px;
+}
+
+.foto-memoria img{
+    width:100%;
+    height:auto;
+
+    display:block;
+
+    object-fit:cover;
+}
