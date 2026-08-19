@@ -1,0 +1,944 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --rosa:#ff4f81;
+    --rosa-claro:#ff9fba;
+    --preto:#111111;
+    --papel:#f4eee5;
+    --papel-escuro:#e9dfd1;
+    --texto:#28231f;
+    --cinza:#756f69;
+}
+
+html,
+body{
+    width:100%;
+    min-height:100%;
+}
+
+body{
+    background:#111;
+    color:var(--texto);
+    font-family:Georgia, "Times New Roman", serif;
+    overflow:hidden;
+}
+
+
+/* =====================================
+   FUNDO
+===================================== */
+
+.background{
+    position:fixed;
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255,79,129,.12),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(255,255,255,.06),
+            transparent 30%
+        ),
+        #111;
+
+    z-index:-1;
+}
+
+
+/* =====================================
+   VOLTAR
+===================================== */
+
+.voltar{
+    position:fixed;
+
+    top:20px;
+    left:20px;
+
+    z-index:100;
+
+    color:white;
+    text-decoration:none;
+
+    font-family:Arial,sans-serif;
+    font-size:13px;
+
+    padding:10px 15px;
+
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:999px;
+
+    background:rgba(0,0,0,.45);
+
+    backdrop-filter:blur(10px);
+
+    transition:.25s;
+}
+
+.voltar:hover{
+    background:var(--rosa);
+    border-color:var(--rosa);
+}
+
+
+/* =====================================
+   PROGRESSO
+===================================== */
+
+.progresso{
+    position:fixed;
+
+    top:24px;
+    right:30px;
+
+    z-index:100;
+
+    color:white;
+
+    font-family:Arial,sans-serif;
+    font-size:12px;
+
+    letter-spacing:2px;
+
+    opacity:.7;
+}
+
+
+/* =====================================
+   LIVRO
+===================================== */
+
+.livro{
+    position:relative;
+
+    width:100vw;
+    height:100vh;
+}
+
+
+/* =====================================
+   PÁGINA
+===================================== */
+
+.pagina{
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:80px 20px;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(255,255,255,.6),
+            transparent 40%
+        ),
+        var(--papel);
+
+    opacity:0;
+    visibility:hidden;
+
+    transform:
+        translateX(40px)
+        rotateY(-4deg);
+
+    transition:
+        opacity .5s ease,
+        transform .5s ease,
+        visibility .5s;
+
+    overflow-y:auto;
+}
+
+.pagina.ativa{
+    opacity:1;
+    visibility:visible;
+
+    transform:
+        translateX(0)
+        rotateY(0);
+}
+
+
+/* =====================================
+   TEXTURA
+===================================== */
+
+.pagina::before{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    pointer-events:none;
+
+    opacity:.18;
+
+    background-image:
+        radial-gradient(
+            rgba(0,0,0,.15) .6px,
+            transparent .6px
+        );
+
+    background-size:4px 4px;
+}
+
+
+/* =====================================
+   CONTEÚDO
+===================================== */
+
+.pagina-conteudo{
+    position:relative;
+
+    width:100%;
+    max-width:720px;
+
+    padding:40px 20px;
+
+    z-index:2;
+}
+
+.central{
+    text-align:center;
+}
+
+
+/* =====================================
+   CAPA
+===================================== */
+
+.capa{
+    background:
+        linear-gradient(
+            rgba(20,15,17,.15),
+            rgba(20,15,17,.15)
+        ),
+        #181315;
+
+    color:white;
+}
+
+.capa::after{
+    content:"";
+
+    position:absolute;
+    inset:30px;
+
+    border:1px solid rgba(255,255,255,.12);
+
+    pointer-events:none;
+}
+
+.capa-conteudo{
+    position:relative;
+
+    width:90%;
+    max-width:650px;
+
+    text-align:center;
+
+    z-index:3;
+}
+
+.pequeno{
+    font-family:Arial,sans-serif;
+
+    font-size:11px;
+
+    letter-spacing:5px;
+
+    color:var(--rosa);
+
+    font-weight:bold;
+}
+
+.capa h1{
+    margin-top:30px;
+
+    font-size:clamp(60px,10vw,110px);
+
+    line-height:.82;
+
+    font-weight:normal;
+
+    letter-spacing:-5px;
+}
+
+.capa h1 span{
+    color:var(--rosa);
+}
+
+.capa p{
+    max-width:420px;
+
+    margin:30px auto;
+
+    font-size:17px;
+
+    line-height:1.7;
+
+    color:#d5ceca;
+}
+
+.linha{
+    width:70px;
+    height:1px;
+
+    background:var(--rosa);
+
+    margin:30px auto;
+}
+
+.nomes{
+    font-size:20px;
+
+    margin-top:30px;
+}
+
+.nomes span{
+    color:var(--rosa);
+
+    margin:0 10px;
+}
+
+.data-capa{
+    margin-top:12px;
+
+    font-family:Arial,sans-serif;
+
+    font-size:11px;
+
+    letter-spacing:3px;
+
+    opacity:.5;
+}
+
+.abrir{
+    margin-top:40px;
+
+    border:1px solid rgba(255,255,255,.3);
+
+    background:transparent;
+
+    color:white;
+
+    padding:14px 25px;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    font-family:Arial,sans-serif;
+
+    transition:.3s;
+}
+
+.abrir:hover{
+    background:var(--rosa);
+
+    border-color:var(--rosa);
+
+    transform:translateY(-3px);
+}
+
+
+/* =====================================
+   TÍTULOS
+===================================== */
+
+.numero-capitulo{
+    display:block;
+
+    font-family:Arial,sans-serif;
+
+    font-size:11px;
+
+    letter-spacing:4px;
+
+    font-weight:bold;
+
+    color:var(--rosa);
+
+    margin-bottom:20px;
+}
+
+.pagina h2{
+    font-size:clamp(42px,7vw,78px);
+
+    line-height:.92;
+
+    font-weight:normal;
+
+    letter-spacing:-3px;
+
+    margin-bottom:20px;
+}
+
+.data{
+    display:block;
+
+    font-family:Arial,sans-serif;
+
+    font-size:11px;
+
+    letter-spacing:3px;
+
+    color:var(--cinza);
+
+    margin-bottom:35px;
+}
+
+
+/* =====================================
+   TEXTO
+===================================== */
+
+.texto{
+    font-size:18px;
+
+    line-height:1.8;
+}
+
+.texto p{
+    margin-bottom:25px;
+}
+
+.texto-grande{
+    font-size:26px !important;
+
+    line-height:1.4;
+
+    margin:35px 0 !important;
+}
+
+.destaque{
+    font-weight:bold;
+}
+
+.decoracao{
+    font-size:55px;
+
+    margin:30px 0;
+}
+
+.frase-destaque{
+    margin:40px 0;
+
+    padding:30px 20px;
+
+    border-top:1px solid rgba(0,0,0,.15);
+    border-bottom:1px solid rgba(0,0,0,.15);
+
+    font-size:27px;
+
+    line-height:1.5;
+
+    text-align:center;
+
+    font-style:italic;
+}
+
+
+/* =====================================
+   BETERRABA
+===================================== */
+
+.beterraba{
+    display:inline-block;
+
+    padding:12px 22px;
+
+    margin-bottom:30px;
+
+    border-radius:999px;
+
+    background:#722f37;
+
+    color:white;
+
+    font-family:Arial,sans-serif;
+
+    font-weight:bold;
+
+    letter-spacing:3px;
+
+    box-shadow:
+        0 10px 30px rgba(114,47,55,.2);
+}
+
+
+/* =====================================
+   MÚSICA
+===================================== */
+
+.musica{
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:18px;
+
+    margin:30px 0;
+
+    background:rgba(0,0,0,.05);
+
+    border-radius:15px;
+}
+
+.musica > span{
+    width:45px;
+    height:45px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:var(--rosa);
+
+    color:white;
+
+    font-size:20px;
+}
+
+.musica strong{
+    display:block;
+
+    font-family:Arial,sans-serif;
+
+    font-size:14px;
+}
+
+.musica small{
+    display:block;
+
+    margin-top:4px;
+
+    color:var(--cinza);
+
+    font-family:Arial,sans-serif;
+}
+
+
+/* =====================================
+   FOTOS
+===================================== */
+
+.foto-placeholder{
+    min-height:240px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,79,129,.12),
+            rgba(0,0,0,.08)
+        );
+
+    border:1px dashed rgba(0,0,0,.2);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:10px;
+
+    color:var(--cinza);
+
+    overflow:hidden;
+}
+
+.foto-placeholder span{
+    font-size:45px;
+}
+
+.foto-placeholder small{
+    font-family:Arial,sans-serif;
+
+    font-size:11px;
+
+    opacity:.7;
+}
+
+.galeria{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:10px;
+
+    margin-top:30px;
+}
+
+.galeria .foto-placeholder{
+    min-height:180px;
+}
+
+
+/* =====================================
+   DATA GIGANTE
+===================================== */
+
+.data-gigante{
+    margin-top:40px;
+
+    font-family:Arial,sans-serif;
+
+    font-size:clamp(30px,7vw,70px);
+
+    font-weight:bold;
+
+    letter-spacing:-3px;
+
+    color:rgba(0,0,0,.07);
+}
+
+
+/* =====================================
+   ANEL
+===================================== */
+
+.anel{
+    width:100px;
+    height:100px;
+
+    margin:30px auto;
+
+    border:2px solid var(--rosa);
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:var(--rosa);
+
+    font-size:45px;
+
+    animation:pulsar 2s infinite alternate;
+}
+
+@keyframes pulsar{
+
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.08);
+    }
+}
+
+
+/* =====================================
+   PEDIDO FUTURO
+===================================== */
+
+.pedido-futuro{
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:7px;
+
+    margin-top:40px;
+
+    padding:25px;
+
+    border:1px solid rgba(0,0,0,.12);
+
+    border-radius:20px;
+
+    background:rgba(0,0,0,.03);
+}
+
+.pedido-futuro span{
+    font-family:Arial,sans-serif;
+
+    font-size:13px;
+
+    font-weight:bold;
+}
+
+.pedido-futuro small{
+    color:var(--cinza);
+}
+
+
+/* =====================================
+   FINAL
+===================================== */
+
+.final{
+    background:#161216;
+
+    color:white;
+}
+
+.final .pagina-conteudo{
+    max-width:650px;
+}
+
+.final h2{
+    color:white;
+}
+
+.final p{
+    color:#ccc;
+}
+
+.cursor{
+    color:var(--rosa);
+
+    font-size:35px;
+
+    margin:20px;
+
+    animation:piscando 1s infinite;
+}
+
+@keyframes piscando{
+
+    0%,
+    50%{
+        opacity:1;
+    }
+
+    51%,
+    100%{
+        opacity:0;
+    }
+}
+
+.infinito{
+    font-size:80px;
+
+    color:var(--rosa);
+
+    margin:40px 0;
+}
+
+.fim{
+    font-family:Arial,sans-serif;
+
+    letter-spacing:3px;
+
+    font-size:12px;
+}
+
+
+/* =====================================
+   CONTROLES
+===================================== */
+
+.controle{
+    position:fixed;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    z-index:100;
+
+    width:50px;
+    height:50px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.2);
+
+    background:rgba(0,0,0,.4);
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    backdrop-filter:blur(10px);
+
+    transition:.3s;
+}
+
+.controle:hover{
+    background:var(--rosa);
+
+    border-color:var(--rosa);
+}
+
+.anterior{
+    left:20px;
+}
+
+.proxima{
+    right:20px;
+}
+
+
+/* =====================================
+   NAVEGAÇÃO
+===================================== */
+
+.navegacao{
+    position:fixed;
+
+    bottom:20px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    z-index:100;
+
+    display:flex;
+
+    gap:8px;
+
+    padding:7px;
+
+    border-radius:999px;
+
+    background:rgba(0,0,0,.5);
+
+    backdrop-filter:blur(12px);
+}
+
+.navegacao button{
+    border:none;
+
+    background:transparent;
+
+    color:white;
+
+    padding:8px 12px;
+
+    border-radius:999px;
+
+    font-family:Arial,sans-serif;
+
+    font-size:11px;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.navegacao button:hover{
+    background:rgba(255,255,255,.12);
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media(max-width:700px){
+
+    .voltar{
+        top:12px;
+        left:12px;
+
+        font-size:11px;
+
+        padding:8px 12px;
+    }
+
+    .progresso{
+        top:17px;
+        right:15px;
+    }
+
+    .pagina{
+        padding:
+            80px 25px
+            100px 25px;
+
+        align-items:flex-start;
+    }
+
+    .pagina-conteudo{
+        padding-top:35px;
+    }
+
+    .pagina h2{
+        font-size:48px;
+
+        letter-spacing:-2px;
+    }
+
+    .texto{
+        font-size:16px;
+
+        line-height:1.7;
+    }
+
+    .texto-grande{
+        font-size:23px !important;
+    }
+
+    .frase-destaque{
+        font-size:22px;
+    }
+
+    .controle{
+        width:40px;
+        height:40px;
+
+        font-size:16px;
+    }
+
+    .anterior{
+        left:10px;
+    }
+
+    .proxima{
+        right:10px;
+    }
+
+    .navegacao{
+        bottom:12px;
+    }
+
+    .navegacao button{
+        padding:7px 8px;
+    }
+
+    .galeria{
+        grid-template-columns:1fr;
+    }
+
+    .galeria .foto-placeholder{
+        min-height:200px;
+    }
+
+    .capa h1{
+        font-size:70px;
+    }
+
+    .capa p{
+        font-size:15px;
+    }
+}
