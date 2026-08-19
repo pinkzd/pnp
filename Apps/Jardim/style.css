@@ -232,3 +232,28 @@ footer{
         transform:scale(1.08);
     }
 }
+.timer-container{
+    margin-top:24px;
+    padding:16px;
+    border-radius:18px;
+    background:linear-gradient(
+        135deg,
+        rgba(255,79,129,.12),
+        rgba(255,255,255,.7)
+    );
+    border:1px solid rgba(255,79,129,.15);
+}
+
+.timer-label{
+    display:block;
+    font-size:13px;
+    opacity:.7;
+    margin-bottom:8px;
+}
+
+.timer{
+    font-size:18px;
+    font-weight:bold;
+    color:#ff4f81;
+    line-height:1.5;
+}
