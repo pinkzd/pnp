@@ -73,7 +73,7 @@ const flores = [
         x:52,
         y:60
     },
-    
+
     {
         emoji:"🌺",
         titulo:"Nosso futuro",
@@ -82,7 +82,7 @@ const flores = [
         texto:"Uma conversa atoa da sua mãe virou plano de futuro, Itália que nos aguarde.",
         x:58,
         y:69
-    }
+    },
 ];
 
 
