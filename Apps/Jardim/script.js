@@ -74,7 +74,7 @@ const flores = [
         y:60
     }
     {
-        emoji:"🪻",
+        emoji:"🌺",
         titulo:"Nosso futuro",
         data:"26/10/2026",
         inicio:"2026-10-26T00:00:00",
