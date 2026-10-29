@@ -72,7 +72,8 @@ const flores = [
         texto:"Nessa missa Deus me mostrou que você é a mulher da minha vida.",
         x:52,
         y:60
-    }
+    },
+    
     {
         emoji:"🌺",
         titulo:"Nosso futuro",
