@@ -73,6 +73,15 @@ const flores = [
         x:52,
         y:60
     }
+    {
+        emoji:"🪻",
+        titulo:"Nosso futuro",
+        data:"26/10/2026",
+        inicio:"2026-10-26T00:00:00",
+        texto:"Uma conversa atoa da sua mãe virou plano de futuro, Itália que nos aguarde.",
+        x:58,
+        y:69
+    }
 ];
 
 

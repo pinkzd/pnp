@@ -170,9 +170,24 @@ function verificarSwipe(){
         paginaAnterior();
 
     }
+    
 
 }
+function atualizarDataEpílogo() {
+    const elemento = document.getElementById("data-atual");
 
+    if (!elemento) return;
+
+    const hoje = new Date();
+
+    elemento.textContent = hoje.toLocaleDateString("pt-BR", {
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+    });
+}
+
+atualizarDataEpílogo();
 
 /* =====================================
    INICIAR
